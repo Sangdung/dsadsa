@@ -1,5 +1,6 @@
 import discord, datetime, asyncio, random
-token = "Nzk0MTc5NDk0ODY4MDI1MzYz.X-3DSg.tl9yNC1X7clQZRhQtwQLiDMYImU"
+import os
+token = ""
 client = discord.Client()
 
 @client.event
@@ -63,5 +64,5 @@ async def on_message(message):
         await asyncio.sleep(3600)
         await message.channel.send(f"{message.author.mention}, 1시간 지났다")
     
-
-client.run(token)
+access_token = os.environ["BOT_TOKEN"]
+client.run(access_token)
